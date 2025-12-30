@@ -756,8 +756,20 @@ footer p {
     border-bottom: 1px solid var(--color-border);
 }
 
+.kitchen-story-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
 .kitchen-story-content {
     max-width: 700px;
+}
+
+.kitchen-story-image img {
+    width: 100%;
+    border-radius: 8px;
 }
 
 .kitchen-portfolio {
@@ -1058,7 +1070,8 @@ footer p {
     }
 
     .kitchen-preview .container,
-    .contact-main {
+    .contact-main,
+    .kitchen-story-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
