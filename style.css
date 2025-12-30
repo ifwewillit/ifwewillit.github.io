@@ -461,13 +461,38 @@ footer p {
 
 /* Case Study Page */
 .case-study {
-    padding-top: 100px;
+    padding-top: 0;
 }
 
 .case-study-header {
-    padding: 2rem 0 3rem;
+    padding: 8rem 0 3rem;
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 3rem;
+}
+
+/* Case Navigation */
+.case-nav {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+    margin-top: 3rem;
+}
+
+.case-nav .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.case-nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.case-nav-link.prev {
+    margin-right: auto;
+}
+
+.case-nav-link.next {
+    margin-left: auto;
 }
 
 .case-study-header .case-label {
@@ -529,11 +554,35 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
-.result-grid {
+.result-grid,
+.results-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 1.5rem;
+}
+
+.result-item {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.result-item .result-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+}
+
+.result-item .result-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
 }
 
 .result-card {
@@ -557,6 +606,14 @@ footer p {
 }
 
 /* Now Page */
+.now-page {
+    padding-top: 0;
+}
+
+.now-page .page-header {
+    padding-top: 8rem;
+}
+
 .now-content {
     padding-top: 120px;
     padding-bottom: 4rem;
@@ -572,12 +629,14 @@ footer p {
     margin-bottom: 1rem;
 }
 
-.now-section ul {
+.now-section ul,
+.reading-list {
     list-style: disc;
     padding-left: 1.5rem;
 }
 
-.now-section li {
+.now-section li,
+.reading-list li {
     margin-bottom: 0.5rem;
 }
 
@@ -594,10 +653,31 @@ footer p {
     padding-top: 120px;
 }
 
+.writing-full {
+    padding-top: 0;
+    padding-bottom: 3rem;
+}
+
+/* Article Page */
+.article {
+    padding-top: 0;
+}
+
 .article-header {
+    padding: 8rem 0 2rem;
     margin-bottom: 3rem;
-    padding-bottom: 2rem;
     border-bottom: 1px solid var(--color-border);
+}
+
+.article-nav {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+    margin-top: 3rem;
+}
+
+.article-nav .container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .article-header h1 {
@@ -646,6 +726,93 @@ footer p {
 }
 
 .kitchen-hero {
+    padding: 8rem 0 3rem;
+    text-align: center;
+}
+
+.kitchen-tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.kitchen-accolade {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.kitchen-story {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.kitchen-story-content {
+    max-width: 700px;
+}
+
+.kitchen-portfolio {
+    padding: 4rem 0;
+}
+
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.dish-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.dish-content h3 {
+    margin-bottom: 0.25rem;
+}
+
+.dish-subtitle {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.dish-content p:last-child {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+.kitchen-principles {
+    padding: 4rem 0;
+    background: var(--color-card);
+}
+
+.principle-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.kitchen-principle {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--color-accent-light);
+}
+
+.kitchen-principle h3 {
+    margin-bottom: 0.5rem;
+}
+
+.kitchen-principle p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+.kitchen-hero-old {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
@@ -729,6 +896,71 @@ footer p {
 }
 
 /* Contact Page */
+.contact-page {
+    padding: 8rem 0 4rem;
+}
+
+.contact-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-intro {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact-method h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-method p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+.contact-fit,
+.contact-not-fit,
+.contact-location {
+    margin-bottom: 3rem;
+}
+
+.contact-fit h2,
+.contact-not-fit h2,
+.contact-location h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.contact-fit ul,
+.contact-not-fit ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.contact-fit li,
+.contact-not-fit li {
+    margin-bottom: 0.75rem;
+}
+
 .contact-content {
     padding-top: 120px;
 }
@@ -807,18 +1039,30 @@ footer p {
     }
 
     .kitchen-preview .container,
-    .kitchen-hero,
     .contact-main {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .result-grid {
-        grid-template-columns: 1fr;
+    .result-grid,
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dish-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .dishes-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .principle-list {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
     }
 
     .case-meta {
@@ -844,7 +1088,21 @@ footer p {
         flex-direction: column;
     }
 
-    .dishes-grid {
+    .dishes-grid,
+    .dish-grid {
         grid-template-columns: 1fr;
+    }
+
+    .results-grid,
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-header,
+    .article-header,
+    .kitchen-hero,
+    .contact-page,
+    .now-page .page-header {
+        padding-top: 6rem;
     }
 }
