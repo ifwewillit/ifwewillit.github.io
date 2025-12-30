@@ -172,6 +172,15 @@ body > nav {
     padding: 0 2rem;
 }
 
+.hero-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--color-border);
+}
+
 .hero h1 {
     margin-bottom: 1rem;
 }
