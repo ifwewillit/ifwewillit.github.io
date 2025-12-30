@@ -76,8 +76,14 @@ ul {
     padding: 0 2rem;
 }
 
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 section {
-    padding: 6rem 0;
+    padding: 5rem 0;
 }
 
 /* Navigation */
@@ -123,9 +129,38 @@ nav {
     color: var(--color-text);
 }
 
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
+
+.btn-primary:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.btn-secondary {
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-text);
+}
+
 /* Hero */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -159,280 +194,233 @@ nav {
     gap: 1rem;
 }
 
-.btn {
-    display: inline-block;
-    padding: 0.875rem 1.75rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.btn-primary {
+/* Proof Strip */
+.proof-strip {
     background: var(--color-text);
+    padding: 2rem 0;
+}
+
+.proof-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.proof-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.proof-org {
     color: var(--color-bg);
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
-.btn-primary:hover {
-    background: var(--color-accent);
-    color: var(--color-bg);
-}
-
-.btn-secondary {
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-}
-
-.btn-secondary:hover {
-    border-color: var(--color-text);
-}
-
-/* About */
-.about {
-    background: var(--color-card);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-}
-
-.about-text .lead {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-}
-
-.detail-block {
-    margin-bottom: 2rem;
-}
-
-.detail-block h3 {
+.proof-detail {
+    color: rgba(255,255,255,0.6);
     font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
+}
+
+/* Selected Wins */
+.selected-wins {
+    background: var(--color-card);
+    padding: 4rem 0;
+}
+
+.wins-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.wins-list li {
+    padding: 1rem 1.5rem;
+    background: var(--color-bg);
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.wins-list strong {
+    color: var(--color-accent);
+}
+
+/* How I Work */
+.how-i-work {
+    padding: 5rem 0;
+}
+
+.work-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.principle {
+    padding: 1.5rem;
+    border-left: 3px solid var(--color-accent-light);
+}
+
+.principle h3 {
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
-.detail-block p {
-    margin-bottom: 0.25rem;
-}
-
-.detail-block .org {
+.principle p {
+    font-size: 0.95rem;
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    margin-bottom: 0;
 }
 
-/* Work */
+/* Case Studies Preview */
+.case-studies-preview {
+    background: var(--color-card);
+}
+
 .section-intro {
     font-size: 1.15rem;
     color: var(--color-text-muted);
     max-width: 600px;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
-.work-grid {
+.case-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.work-card {
-    background: var(--color-card);
-    padding: 2rem;
+.case-card {
+    display: block;
+    padding: 1.5rem;
+    background: var(--color-bg);
     border-radius: 8px;
     border: 1px solid var(--color-border);
+    transition: all 0.2s;
 }
 
-.work-card h3 {
+.case-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.case-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--color-accent);
+    margin-bottom: 0.75rem;
 }
 
-.work-card p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
+.case-card h3 {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
 }
 
-.work-card ul {
-    margin-top: 1rem;
-}
-
-.work-card li {
+.case-card p {
     font-size: 0.9rem;
-    padding: 0.5rem 0;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+.case-cta {
+    text-align: center;
+}
+
+/* Writing Preview */
+.writing-preview {
+    padding: 5rem 0;
+}
+
+.writing-list {
+    margin-bottom: 2rem;
+}
+
+.writing-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.writing-item:first-child {
     border-top: 1px solid var(--color-border);
 }
 
-.work-card li:first-child {
-    border-top: none;
-}
-
-.recognition {
-    background: var(--color-card);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-}
-
-.recognition h3 {
-    margin-bottom: 1rem;
-}
-
-.recognition-items {
-    display: flex;
-    gap: 3rem;
-}
-
-.recognition-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.recognition-title {
-    font-weight: 600;
-}
-
-.recognition-detail {
+.writing-date {
+    font-size: 0.85rem;
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-family: var(--font-body);
 }
 
-/* Kitchen */
-.kitchen {
+.writing-item h3 {
+    color: var(--color-text);
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.writing-item:hover h3 {
+    color: var(--color-accent);
+}
+
+.writing-cta {
+    text-align: center;
+}
+
+/* Kitchen Preview */
+.kitchen-preview {
     background: var(--color-text);
     color: var(--color-bg);
 }
 
-.kitchen h2,
-.kitchen h3 {
-    color: var(--color-bg);
-}
-
-.kitchen .section-intro {
-    color: var(--color-accent-light);
-}
-
-.kitchen-content {
+.kitchen-preview .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
-    margin-bottom: 3rem;
+    align-items: center;
 }
 
-.achievement {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.achievement-label {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--color-accent-light);
-    margin-bottom: 0.5rem;
-}
-
-.achievement h3 {
-    font-size: 1.75rem;
-    margin-bottom: 0.25rem;
-}
-
-.achievement p {
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 0;
-}
-
-.philosophy p {
-    color: rgba(255,255,255,0.8);
-}
-
-.philosophy .signature {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--color-accent-light);
-    margin-top: 1.5rem;
-}
-
-.kitchen-sidebar h3 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-accent-light);
-    margin-top: 2rem;
-}
-
-.kitchen-sidebar h3:first-child {
-    margin-top: 0;
-}
-
-.influences li {
-    padding: 0.5rem 0;
-    color: rgba(255,255,255,0.8);
-    font-size: 0.95rem;
-}
-
-.influences strong {
+.kitchen-preview h2 {
     color: var(--color-bg);
 }
 
-.kitchen-sidebar > p {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
+.kitchen-preview p {
+    color: rgba(255,255,255,0.8);
 }
 
-.kitchen-connection {
-    background: rgba(255,255,255,0.05);
-    padding: 2rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--color-accent-light);
+.kitchen-preview .btn-secondary {
+    border-color: rgba(255,255,255,0.3);
+    color: var(--color-bg);
 }
 
-.kitchen-connection p {
-    margin-bottom: 0;
-    color: rgba(255,255,255,0.9);
+.kitchen-preview .btn-secondary:hover {
+    border-color: var(--color-bg);
 }
 
-/* Contact */
-.contact {
-    background: var(--color-card);
+.kitchen-quote blockquote {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--color-accent-light);
+    text-align: right;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-
-.contact-item {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
+/* Contact CTA */
+.contact-cta {
+    text-align: center;
     background: var(--color-bg);
-    border-radius: 8px;
-    transition: all 0.2s;
 }
 
-a.contact-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.contact-label {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+.contact-cta p {
+    font-size: 1.1rem;
     color: var(--color-text-muted);
-    margin-bottom: 0.5rem;
-}
-
-.contact-value {
-    font-weight: 500;
-    color: var(--color-text);
+    margin-bottom: 1.5rem;
 }
 
 /* Footer */
@@ -448,29 +436,394 @@ footer p {
     margin-bottom: 0;
 }
 
+/* =========================
+   PAGE STYLES
+   ========================= */
+
+/* Page Header */
+.page-header {
+    padding-top: 120px;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header .lead {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Case Study Page */
+.case-study {
+    padding-top: 100px;
+}
+
+.case-study-header {
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 3rem;
+}
+
+.case-study-header .case-label {
+    margin-bottom: 1rem;
+}
+
+.case-study-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.case-study-header .lead {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+}
+
+.case-meta {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.case-meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-meta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.case-meta-value {
+    font-weight: 600;
+}
+
+.case-section {
+    margin-bottom: 3rem;
+}
+
+.case-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-accent-light);
+}
+
+.case-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.case-section li {
+    margin-bottom: 0.5rem;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.result-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.result-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.result-label {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* Now Page */
+.now-content {
+    padding-top: 120px;
+    padding-bottom: 4rem;
+}
+
+.now-section {
+    margin-bottom: 3rem;
+}
+
+.now-section h2 {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.now-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.now-section li {
+    margin-bottom: 0.5rem;
+}
+
+.now-updated {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Writing Page */
+.writing-content {
+    padding-top: 120px;
+}
+
+.article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.article-header h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.article-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-content h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.article-content ul, .article-content ol {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+.article-content blockquote {
+    border-left: 3px solid var(--color-accent-light);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+/* Kitchen Page */
+.kitchen-content {
+    padding-top: 120px;
+}
+
+.kitchen-hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.kitchen-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.kitchen-achievement {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.kitchen-achievement h3 {
+    color: var(--color-bg);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.kitchen-achievement p {
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.philosophy-section {
+    margin-bottom: 4rem;
+}
+
+.philosophy-section h2 {
+    margin-bottom: 2rem;
+}
+
+.signature-dishes h2 {
+    margin-bottom: 2rem;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.dish-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dish-image {
+    aspect-ratio: 4/3;
+    background: var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.dish-info {
+    padding: 1.25rem;
+}
+
+.dish-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dish-info p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+/* Contact Page */
+.contact-content {
+    padding-top: 120px;
+}
+
+.contact-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.contact-primary h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.contact-email {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-looking {
+    margin-top: 3rem;
+}
+
+.contact-looking h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-looking ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.contact-looking li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-sidebar {
+    background: var(--color-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.contact-sidebar h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-sidebar p, .contact-sidebar a {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     h1 {
         font-size: 2.5rem;
     }
 
-    .about-grid,
-    .kitchen-content {
+    .proof-items {
+        justify-content: center;
+    }
+
+    .wins-list {
+        grid-template-columns: 1fr;
+    }
+
+    .work-principles {
+        grid-template-columns: 1fr;
+    }
+
+    .case-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kitchen-preview .container,
+    .kitchen-hero,
+    .contact-main {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .work-grid {
+    .result-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-grid {
+    .dishes-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .recognition-items {
-        flex-direction: column;
-        gap: 1rem;
+    .case-meta {
+        flex-wrap: wrap;
+        gap: 1.5rem;
     }
 }
 
@@ -480,7 +833,7 @@ footer p {
     }
 
     section {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
 
     .nav-links {
@@ -491,7 +844,7 @@ footer p {
         flex-direction: column;
     }
 
-    .contact-grid {
+    .dishes-grid {
         grid-template-columns: 1fr;
     }
 }

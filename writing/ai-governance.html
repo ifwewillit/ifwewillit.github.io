@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Ops: Governance That People Actually Follow | Will O'Neil</title>
+    <meta name="description" content="AI policies that work are short, clear, and acknowledge that people will use these tools regardless. Design for reality.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WO</a>
+            <div class="nav-links">
+                <a href="/work/">Work</a>
+                <a href="/writing/" class="active">Writing</a>
+                <a href="/kitchen/">Kitchen</a>
+                <a href="/now.html">Now</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article">
+        <header class="article-header">
+            <div class="container">
+                <span class="writing-date">2024</span>
+                <h1>AI in Ops: Governance That People Actually Follow</h1>
+            </div>
+        </header>
+
+        <div class="container article-content">
+            <p>Your employees are using AI tools. Maybe you've blessed specific ones. Maybe you haven't. Doesn't matter. They're using them. The question isn't whether to have AI governance. It's whether your governance reflects reality or pretends it doesn't exist.</p>
+
+            <h2>The Policy That Gets Ignored</h2>
+
+            <p>I've seen AI policies that are 15 pages long. They cover every hypothetical scenario. They require approval workflows for basic use cases. They're written by legal and read by no one.</p>
+
+            <p>Here's what happens: people read the first paragraph, decide it's too complicated to understand, and use ChatGPT anyway. They just don't tell anyone. You've created exactly the behavior you were trying to prevent.</p>
+
+            <h2>What Works Instead</h2>
+
+            <p>Effective AI governance fits on one page. It answers three questions:</p>
+
+            <p><strong>What can I use AI for without asking anyone?</strong> Give people a clear green zone. Drafting emails, summarizing documents, brainstorming, explaining concepts. Things where the output gets reviewed before going anywhere sensitive.</p>
+
+            <p><strong>What requires approval?</strong> Customer-facing content, code that goes into production, anything involving personal data. Be specific. Not "sensitive use cases" but actual categories people can identify.</p>
+
+            <p><strong>What's never okay?</strong> Pasting confidential data into consumer AI tools. Using AI outputs without review in high-stakes situations. Claiming AI-generated work is human-original when that matters. Short list, hard lines.</p>
+
+            <h2>The Data Question</h2>
+
+            <p>Most AI governance anxiety is really data governance anxiety. People worry about what goes into these models. Fair concern. Address it directly:</p>
+
+            <ul>
+                <li>Public information: Fine to use</li>
+                <li>Internal information: Check if the tool has enterprise data protections</li>
+                <li>Confidential information: Not without explicit approval and a tool with appropriate controls</li>
+                <li>Personal data: Almost never, and only with legal review</li>
+            </ul>
+
+            <p>That's it. Four categories. People can actually remember this.</p>
+
+            <h2>Make the Right Thing Easy</h2>
+
+            <p>If you want people to use approved AI tools, make them easier to access than the unapproved ones. Negotiate enterprise licenses. Do the SSO integration. Provide training that's actually useful.</p>
+
+            <p>At NOMAD, we deployed 8 AI systems with governance that worked because we made compliant behavior the path of least resistance. People used our tools because our tools were good, not because the policy told them to.</p>
+
+            <h2>Review and Update</h2>
+
+            <p>AI capabilities change monthly. Your policy can't be static. Build in quarterly reviews. Watch what people are actually doing. Ask what they wish they could do. Adjust.</p>
+
+            <p>Governance is a living document or a dead letter. There's no middle ground.</p>
+        </div>
+
+        <nav class="article-nav">
+            <div class="container">
+                <a href="/writing/vendor-sprawl.html" class="case-nav-link prev">← Vendor Sprawl</a>
+                <a href="/writing/metrics-enablement.html" class="case-nav-link next">Metrics for Enablement →</a>
+            </div>
+        </nav>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>Built by hand. No templates.</p>
+        </div>
+    </footer>
+</body>
+</html>

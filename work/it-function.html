@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Function from Zero | Will O'Neil</title>
+    <meta name="description" content="How I built an IT function from scratch during hypergrowth: SSO architecture, device management, access governance, and 70+ vendor ecosystem.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WO</a>
+            <div class="nav-links">
+                <a href="/work/" class="active">Work</a>
+                <a href="/writing/">Writing</a>
+                <a href="/kitchen/">Kitchen</a>
+                <a href="/now.html">Now</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="case-study">
+        <header class="case-study-header">
+            <div class="container">
+                <span class="case-label">Infrastructure</span>
+                <h1>IT Function from Zero</h1>
+                <p class="case-summary">Building enterprise IT infrastructure during 3x headcount growth with no dedicated IT budget, no existing systems, and no playbook.</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="case-section">
+                <h2>The Problem</h2>
+                <p>NOMAD was growing fast. When I joined, we had 12 people and no IT infrastructure. Laptops were purchased ad hoc. There was no SSO, no device management, no access governance. Every new hire meant manual account creation across a dozen tools. Every offboarding was a liability waiting to happen.</p>
+                <p>The company was scaling to enterprise clients who would ask hard questions about our security posture. We needed to look like a company that took this seriously, because we were becoming one.</p>
+            </section>
+
+            <section class="case-section">
+                <h2>Constraints</h2>
+                <ul class="constraints-list">
+                    <li><strong>No dedicated IT budget.</strong> Everything came from general operations, justified line by line.</li>
+                    <li><strong>No IT team.</strong> I was it. Every system needed to be maintainable by one person.</li>
+                    <li><strong>Speed over perfection.</strong> We were hiring faster than I could build. Good enough now beat perfect later.</li>
+                    <li><strong>Enterprise requirements incoming.</strong> Clients were starting to send security questionnaires. We needed answers.</li>
+                </ul>
+            </section>
+
+            <section class="case-section">
+                <h2>What I Built</h2>
+
+                <h3>Identity & Access</h3>
+                <p>Google Workspace as the identity provider, with SSO enforced across every tool that supported it. SAML where possible, OAuth where not. The goal: one place to provision, one place to deprovision, audit trail everywhere.</p>
+
+                <h3>Device Management</h3>
+                <p>Standardized on MacBooks with Kandji for MDM. Automated enrollment, security baselines pushed on first boot, software deployment without touching the machine. New hire gets laptop, laptop configures itself.</p>
+
+                <h3>Vendor Ecosystem</h3>
+                <p>Built relationships with 70+ vendors. Consolidated where possible, integrated where it mattered. Created a vendor database tracking contract terms, renewal dates, SSO status, and data processing agreements. Nothing falls through the cracks because I can see all of it.</p>
+
+                <h3>Access Governance</h3>
+                <p>Role-based access templates in a spreadsheet (yes, really). When someone joins as a Sales rep, I know exactly which 15 tools they need. When they leave, I know exactly what to revoke. The system is simple because simple systems actually get followed.</p>
+
+                <h3>Documentation</h3>
+                <p>Every process documented in Notion. Not just what to do, but why. New IT person could take over tomorrow and understand the reasoning behind every decision.</p>
+            </section>
+
+            <section class="case-section">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-number">80%</span>
+                        <span class="result-label">Reduction in onboarding time</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">70+</span>
+                        <span class="result-label">Vendors managed</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">0</span>
+                        <span class="result-label">Security incidents from access issues</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">3x</span>
+                        <span class="result-label">Headcount growth supported</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Artifacts</h2>
+                <ul class="artifacts-list">
+                    <li>SSO implementation across all compatible tools</li>
+                    <li>MDM deployment with automated provisioning</li>
+                    <li>Vendor management database and renewal tracking</li>
+                    <li>Role-based access control templates</li>
+                    <li>IT runbook covering all standard procedures</li>
+                    <li>Security questionnaire response library</li>
+                </ul>
+            </section>
+        </div>
+
+        <nav class="case-nav">
+            <div class="container">
+                <a href="/work/" class="case-nav-link prev">← All Case Studies</a>
+                <a href="/work/people-ops.html" class="case-nav-link next">People Ops at Scale →</a>
+            </div>
+        </nav>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>Built by hand. No templates.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTO Prediction System | Will O'Neil</title>
+    <meta name="description" content="A 2,200-line ML system predicting burnout risk from PTO patterns. How it works, what it found, and what changed.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WO</a>
+            <div class="nav-links">
+                <a href="/work/" class="active">Work</a>
+                <a href="/writing/">Writing</a>
+                <a href="/kitchen/">Kitchen</a>
+                <a href="/now.html">Now</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="case-study">
+        <header class="case-study-header">
+            <div class="container">
+                <span class="case-label">ML</span>
+                <h1>PTO Prediction System</h1>
+                <p class="case-summary">Using machine learning to identify burnout risk before it becomes turnover. 2,200 lines of Python, real patterns discovered, actual interventions made.</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="case-section">
+                <h2>The Problem</h2>
+                <p>We had unlimited PTO. Which meant we had no data on whether people were actually taking time off. The policy was generous on paper, but in practice, some people weren't using it. By the time burnout showed up in performance or resignation letters, it was too late.</p>
+                <p>I wanted to know: could PTO patterns predict burnout risk? Could we intervene before someone decided to leave?</p>
+            </section>
+
+            <section class="case-section">
+                <h2>Constraints</h2>
+                <ul class="constraints-list">
+                    <li><strong>Privacy concerns.</strong> This data is sensitive. Had to build with appropriate access controls and clear purpose limitations.</li>
+                    <li><strong>Small dataset.</strong> ~40 employees. Traditional ML approaches need more data than that.</li>
+                    <li><strong>No ground truth.</strong> "Burnout" isn't a label in our HRIS. Had to define it operationally.</li>
+                    <li><strong>Actionability required.</strong> Predictions are useless if they don't change behavior.</li>
+                </ul>
+            </section>
+
+            <section class="case-section">
+                <h2>What I Built</h2>
+
+                <h3>Data Pipeline</h3>
+                <p>Pulled PTO data from Gusto, calendar data from Google, and tenure data from our HRIS. Cleaned, normalized, and feature-engineered. Days since last PTO, average gap between requests, seasonal patterns, comparison to team averages.</p>
+
+                <h3>Risk Model</h3>
+                <p>Given the small dataset, went with a rule-based system informed by research on burnout indicators, not a black-box ML model. Clear thresholds, interpretable outputs. When the model flags someone, I can explain exactly why.</p>
+
+                <h3>Dashboard</h3>
+                <p>Weekly automated report showing risk tiers across the org. Red flags for immediate attention, yellow for monitoring, green for healthy patterns. Managers see their teams, leadership sees the aggregate.</p>
+
+                <h3>Intervention Protocol</h3>
+                <p>High risk triggers a conversation. Not "the algorithm says you're burning out," but "I noticed you haven't taken time off in a while, how are things going?" The system surfaces the data. Humans have the conversations.</p>
+            </section>
+
+            <section class="case-section">
+                <h2>What We Found</h2>
+                <p>Three patterns emerged:</p>
+                <ul>
+                    <li><strong>The "I'll take time later" trap.</strong> New high performers consistently delayed PTO for 6+ months, then burned out hard.</li>
+                    <li><strong>Team clustering.</strong> If a manager wasn't taking PTO, neither was their team. Culture cascades.</li>
+                    <li><strong>Friday-only pattern.</strong> Some people only took Fridays off, never full weeks. High correlation with exhaustion in engagement surveys.</li>
+                </ul>
+            </section>
+
+            <section class="case-section">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-number">2,200</span>
+                        <span class="result-label">Lines of Python</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">12</span>
+                        <span class="result-label">Interventions triggered</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">3</span>
+                        <span class="result-label">Policy changes informed</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">Weekly</span>
+                        <span class="result-label">Automated reporting</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Artifacts</h2>
+                <ul class="artifacts-list">
+                    <li>Python codebase with data pipeline and risk model</li>
+                    <li>Automated weekly risk report generation</li>
+                    <li>Manager dashboard for team-level visibility</li>
+                    <li>Intervention conversation guide</li>
+                    <li>Documentation of methodology and limitations</li>
+                </ul>
+            </section>
+        </div>
+
+        <nav class="case-nav">
+            <div class="container">
+                <a href="/work/ai-capability.html" class="case-nav-link prev">← AI Capability in Production</a>
+                <a href="/work/security-posture.html" class="case-nav-link next">Security & Pen Test Readiness →</a>
+            </div>
+        </nav>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>Built by hand. No templates.</p>
+        </div>
+    </footer>
+</body>
+</html>

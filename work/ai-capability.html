@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Capability in Production | Will O'Neil</title>
+    <meta name="description" content="Deploying 8 LLM systems with governance frameworks, acceptable use policies, and ROI tracking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WO</a>
+            <div class="nav-links">
+                <a href="/work/" class="active">Work</a>
+                <a href="/writing/">Writing</a>
+                <a href="/kitchen/">Kitchen</a>
+                <a href="/now.html">Now</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="case-study">
+        <header class="case-study-header">
+            <div class="container">
+                <span class="case-label">AI</span>
+                <h1>AI Capability in Production</h1>
+                <p class="case-summary">Moving from AI curiosity to AI infrastructure. 8 production systems, governance framework, and measurable ROI.</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="case-section">
+                <h2>The Problem</h2>
+                <p>Everyone was talking about AI. A few people were experimenting with ChatGPT for random tasks. There was no strategy, no governance, no way to know what was working. The gap between "playing with AI" and "AI as competitive advantage" was enormous, and we were firmly on the wrong side of it.</p>
+                <p>Meanwhile, enterprise clients were starting to ask about our AI policies. What data goes into these systems? Who has access? What's the approval process? We had no answers.</p>
+            </section>
+
+            <section class="case-section">
+                <h2>Constraints</h2>
+                <ul class="constraints-list">
+                    <li><strong>Data sensitivity.</strong> Real estate data, client information, financial details. Couldn't just paste everything into ChatGPT.</li>
+                    <li><strong>Skepticism.</strong> Some people saw AI as hype. Had to prove value before asking for investment.</li>
+                    <li><strong>No ML engineering.</strong> Whatever I built had to work without a dedicated AI team.</li>
+                    <li><strong>Governance gap.</strong> Needed policies before deployment, but policies without use cases are fiction.</li>
+                </ul>
+            </section>
+
+            <section class="case-section">
+                <h2>What I Built</h2>
+
+                <h3>Governance Framework</h3>
+                <p>Acceptable use policy defining what data can go into AI systems, what requires approval, what's prohibited. Risk tiers based on data sensitivity. Review process for new use cases. Not bureaucracy for its own sake, but guardrails that let people move fast within bounds.</p>
+
+                <h3>Production Systems</h3>
+                <p>8 LLM-powered systems in production:</p>
+                <ul>
+                    <li>Document analysis for lease abstraction</li>
+                    <li>Email drafting with company voice training</li>
+                    <li>Meeting summarization and action item extraction</li>
+                    <li>Knowledge base Q&A over internal documentation</li>
+                    <li>Code review assistance for technical team</li>
+                    <li>Customer inquiry routing and initial response</li>
+                    <li>Market research synthesis</li>
+                    <li>Compliance document review</li>
+                </ul>
+
+                <h3>ROI Tracking</h3>
+                <p>Built measurement into every deployment. Time saved, quality improvements, error reduction. Monthly reporting to leadership showing actual impact, not theoretical benefits. When something didn't deliver, we killed it.</p>
+
+                <h3>Training Program</h3>
+                <p>Workshops for each team on their specific use cases. Not generic "how to prompt" training, but hands-on sessions with their actual work. People learn by doing, so we did.</p>
+            </section>
+
+            <section class="case-section">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-number">8</span>
+                        <span class="result-label">Production AI systems</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">$275K+</span>
+                        <span class="result-label">Annual ROI documented</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">0</span>
+                        <span class="result-label">Data incidents</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">100%</span>
+                        <span class="result-label">Teams with AI capability</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Artifacts</h2>
+                <ul class="artifacts-list">
+                    <li>AI acceptable use policy and data classification guide</li>
+                    <li>Use case evaluation framework and approval workflow</li>
+                    <li>Production system documentation and architecture</li>
+                    <li>ROI tracking dashboard and monthly reporting</li>
+                    <li>Team-specific training materials and prompt libraries</li>
+                    <li>Vendor evaluation criteria for AI tools</li>
+                </ul>
+            </section>
+        </div>
+
+        <nav class="case-nav">
+            <div class="container">
+                <a href="/work/people-ops.html" class="case-nav-link prev">← People Ops at Scale</a>
+                <a href="/work/pto-prediction.html" class="case-nav-link next">PTO Prediction System →</a>
+            </div>
+        </nav>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>Built by hand. No templates.</p>
+        </div>
+    </footer>
+</body>
+</html>

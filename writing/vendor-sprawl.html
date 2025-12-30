@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Sprawl, Access Governance, and Why It Fails | Will O'Neil</title>
+    <meta name="description" content="Most companies have more SaaS tools than they know. Here's why access governance breaks down and what actually works.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WO</a>
+            <div class="nav-links">
+                <a href="/work/">Work</a>
+                <a href="/writing/" class="active">Writing</a>
+                <a href="/kitchen/">Kitchen</a>
+                <a href="/now.html">Now</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article">
+        <header class="article-header">
+            <div class="container">
+                <span class="writing-date">2024</span>
+                <h1>Vendor Sprawl, Access Governance, and Why It Fails</h1>
+            </div>
+        </header>
+
+        <div class="container article-content">
+            <p>Ask a company how many SaaS tools they use. They'll guess 30. The actual number is usually 70 or more. I've done this exercise three times now. The gap is always bigger than anyone expects.</p>
+
+            <h2>How Sprawl Happens</h2>
+
+            <p>No one plans for 70 vendors. It accumulates. Marketing needs a landing page tool. Sales needs a prospecting tool. Engineering needs a monitoring tool. Each one makes sense in isolation. Add a few years of growth and you have a portfolio no one fully understands.</p>
+
+            <p>The problem isn't the tools. It's that no one owns the whole picture. Each team manages their stack. IT manages the "core" tools. But the edges are where things get messy.</p>
+
+            <h2>Why Access Reviews Fail</h2>
+
+            <p>Most companies handle access governance through periodic reviews. Once a quarter, managers get a list and confirm their people still need access. In theory this works. In practice:</p>
+
+            <ul>
+                <li>Managers approve everything to avoid the hassle of follow-up questions.</li>
+                <li>Reviews only cover known tools, not the shadow IT no one catalogued.</li>
+                <li>No one remembers what half these tools do, so they assume someone needs them.</li>
+                <li>Former employees still have access to tools that don't sync with the identity provider.</li>
+            </ul>
+
+            <p>The process exists. It just doesn't work.</p>
+
+            <h2>What Actually Works</h2>
+
+            <p>After managing 70+ vendors, here's what I've found effective:</p>
+
+            <p><strong>One source of truth for vendors.</strong> A spreadsheet is fine. It needs to include: tool name, owner, SSO status, contract renewal date, and who has access. Update it when things change. Don't wait for quarterly reviews to discover you have a problem.</p>
+
+            <p><strong>SSO everywhere possible.</strong> If a tool supports SSO, enforce it. If it doesn't, think hard about whether you need it. Deprovisioning is only as good as your ability to cut access from one place.</p>
+
+            <p><strong>Offboarding as a checklist, not a process.</strong> When someone leaves, you need a list of every tool they touch. Not "the tools we think they touch" or "the tools connected to our IdP." Every tool. Build this list before you need it.</p>
+
+            <p><strong>Monthly spot checks.</strong> Pick 5 random tools and verify the access list is accurate. You'll find problems. Fix them before an auditor does.</p>
+
+            <h2>The Underlying Issue</h2>
+
+            <p>Vendor sprawl is a symptom. The disease is that software is easy to buy and hard to govern. Every new tool is a small decision. The accumulation is a large problem that no one owns until it becomes a crisis.</p>
+
+            <p>Someone needs to own the whole picture. Not just IT, not just security, not just finance. Someone who can see across all of it and make the hard calls about what stays and what goes.</p>
+
+            <p>At NOMAD, that was me. At your company, it should be someone.</p>
+        </div>
+
+        <nav class="article-nav">
+            <div class="container">
+                <a href="/writing/building-functions-from-zero.html" class="case-nav-link prev">← Building Functions from Zero</a>
+                <a href="/writing/ai-governance.html" class="case-nav-link next">AI Governance →</a>
+            </div>
+        </nav>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>Built by hand. No templates.</p>
+        </div>
+    </footer>
+</body>
+</html>

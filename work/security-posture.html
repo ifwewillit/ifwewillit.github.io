@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security & Pen Test Readiness | Will O'Neil</title>
+    <meta name="description" content="Preparing for enterprise security assessments: scoping, documentation, access controls, and remediation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WO</a>
+            <div class="nav-links">
+                <a href="/work/" class="active">Work</a>
+                <a href="/writing/">Writing</a>
+                <a href="/kitchen/">Kitchen</a>
+                <a href="/now.html">Now</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="case-study">
+        <header class="case-study-header">
+            <div class="container">
+                <span class="case-label">Security</span>
+                <h1>Security & Pen Test Readiness</h1>
+                <p class="case-summary">Leading enterprise penetration test preparation from scoping through remediation. Making security real, not just documented.</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="case-section">
+                <h2>The Problem</h2>
+                <p>A major enterprise client required a third-party penetration test before signing. We'd never had one. Our security posture was decent but undocumented. We had good practices in place but couldn't prove it. The gap between "we're secure" and "we can demonstrate security" was about to cost us a significant deal.</p>
+            </section>
+
+            <section class="case-section">
+                <h2>Constraints</h2>
+                <ul class="constraints-list">
+                    <li><strong>Tight timeline.</strong> Client needed results before quarter end. No time for perfect.</li>
+                    <li><strong>No security team.</strong> Engineering was busy shipping product. This landed on me.</li>
+                    <li><strong>Documentation gap.</strong> Practices existed but weren't written down.</li>
+                    <li><strong>Unknown unknowns.</strong> We didn't know what the pen testers would find. That's the point.</li>
+                </ul>
+            </section>
+
+            <section class="case-section">
+                <h2>What I Built</h2>
+
+                <h3>Scoping</h3>
+                <p>Worked with the pen test firm to define scope. Which systems, which attack vectors, what's in bounds. Coordinated with engineering to identify all external-facing services, APIs, and data flows. You can't test what you haven't mapped.</p>
+
+                <h3>Pre-Assessment Hardening</h3>
+                <p>Before the test, addressed the obvious gaps. Unused ports closed, default credentials rotated, unnecessary services disabled. Not to hide problems, but to focus the test on real attack surfaces instead of low-hanging fruit.</p>
+
+                <h3>Access Control Audit</h3>
+                <p>Full review of who had access to what. Discovered several accounts that should have been deprovisioned, permissions that had crept beyond role requirements, and service accounts with excessive privileges. Fixed all of it.</p>
+
+                <h3>Documentation</h3>
+                <p>Created security documentation that didn't exist: network diagrams, data flow maps, access control matrices, incident response procedures. Not for compliance theater, but because you can't secure what you can't describe.</p>
+
+                <h3>Remediation Process</h3>
+                <p>When findings came back, triaged by severity and exploitability. Critical issues fixed within 48 hours. Created tracking system for remediation progress. Coordinated retesting to verify fixes.</p>
+            </section>
+
+            <section class="case-section">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-number">100%</span>
+                        <span class="result-label">Critical findings remediated</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">48hr</span>
+                        <span class="result-label">Critical issue response time</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">Passed</span>
+                        <span class="result-label">Enterprise security assessment</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">Signed</span>
+                        <span class="result-label">Enterprise client contract</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Artifacts</h2>
+                <ul class="artifacts-list">
+                    <li>Security assessment scoping documentation</li>
+                    <li>Network architecture and data flow diagrams</li>
+                    <li>Access control matrix and audit trail</li>
+                    <li>Remediation tracking and prioritization framework</li>
+                    <li>Incident response procedures</li>
+                    <li>Security questionnaire response library</li>
+                </ul>
+            </section>
+        </div>
+
+        <nav class="case-nav">
+            <div class="container">
+                <a href="/work/pto-prediction.html" class="case-nav-link prev">← PTO Prediction System</a>
+                <a href="/work/" class="case-nav-link next">All Case Studies →</a>
+            </div>
+        </nav>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>Built by hand. No templates.</p>
+        </div>
+    </footer>
+</body>
+</html>
