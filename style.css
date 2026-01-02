@@ -1147,3 +1147,182 @@ footer p {
         padding-top: 6rem;
     }
 }
+
+/* Executive Operations Page */
+.exec-ops-section {
+    margin: 3rem 0;
+}
+
+.exec-ops-category {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 3rem;
+}
+
+.exec-ops-category:last-child {
+    border-bottom: none;
+}
+
+.exec-ops-category h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.exec-ops-category h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.ops-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ops-content li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.ops-content li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.case-studies-preview {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    border-top: 2px solid #e5e5e5;
+}
+
+.case-studies-preview h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.case-study-card {
+    background: var(--color-white);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+}
+
+.case-study-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.case-study-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent);
+}
+
+.case-study-card p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* Executive Operations Preview (Homepage) */
+.exec-ops-preview {
+    background: var(--color-white);
+    padding: 5rem 0;
+}
+
+.exec-ops-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.ops-highlight {
+    padding: 1.5rem;
+    background: var(--color-background);
+    border-radius: 0.5rem;
+    border: 1px solid #e5e5e5;
+}
+
+.ops-highlight h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent);
+}
+
+.ops-highlight p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.exec-ops-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Executive Operations CTA Section (Work page) */
+.exec-ops-cta-section {
+    background: var(--color-background);
+    padding: 5rem 0;
+    margin: 3rem 0;
+}
+
+.exec-ops-cta-section .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.exec-ops-cta-section .section-intro {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+}
+
+.exec-ops-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.ops-area {
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ops-area h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-accent);
+}
+
+.ops-area p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.exec-ops-cta-section .btn {
+    margin-top: 2rem;
+}
