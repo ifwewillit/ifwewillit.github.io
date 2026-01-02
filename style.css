@@ -1326,3 +1326,136 @@ footer p {
 .exec-ops-cta-section .btn {
     margin-top: 2rem;
 }
+
+/* Personal/This is Me Page */
+.personal-hero {
+    background: var(--color-background);
+    padding: 8rem 0 4rem;
+    text-align: center;
+}
+
+.personal-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-statement {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+}
+
+.personal-story {
+    padding: 4rem 0;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.story-content p:first-child {
+    font-size: 1.25rem;
+}
+
+.personal-principles {
+    background: var(--color-white);
+    padding: 4rem 0;
+}
+
+.personal-principles h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.principles-section {
+    margin-bottom: 3rem;
+}
+
+.principles-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.principles-list {
+    list-style: none;
+    padding: 0;
+}
+
+.principles-list li {
+    padding: 0.75rem 0;
+    font-size: 1.125rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.principles-list li:last-child {
+    border-bottom: none;
+}
+
+.personal-truths {
+    background: var(--color-background);
+    padding: 4rem 0;
+}
+
+.personal-truths h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.truths-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.truths-content p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.truths-content p:last-child {
+    border-bottom: none;
+}
+
+.kitchen-expression {
+    padding: 4rem 0;
+}
+
+.kitchen-expression h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.kitchen-intro {
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--color-accent);
+    margin-bottom: 3rem;
+}
+
+.kitchen-philosophy {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.kitchen-philosophy p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
