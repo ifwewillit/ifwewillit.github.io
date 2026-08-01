@@ -116,17 +116,27 @@ export function Kitchen() {
 
       <Section
         title="In the Kitchen"
-        intro="2025 FavChef Semifinalist. Modern American chef with desert bones."
+        intro="2025 FavChef Semifinalist. Cooking has been part of who I am since I was six."
       >
         <div className="prose" style={{ marginBottom: "var(--space-8)" }}>
           <p>
-            I paid for college working as a chef. The discipline transferred: build systems that
-            don't depend on heroics. Document everything. Remove what doesn't earn its place.
+            I was born in Vail and raised in Denver, with childhood stretches spent with family in
+            California, New York, Boston, and Ohio. The cooking started with my grandma on my
+            dad's side: from the time I was six, she'd pull me into the kitchen and let me help
+            her cook Thanksgiving. The first thing I ever made by myself was creamed spinach.
+            Then French meringues.
           </p>
           <p>
-            I cook from the Sonoran desert tradition I grew up with, filtered through years of
-            professional technique. Chiles, citrus, smoke. Clean flavors, honest ingredients,
-            nothing on the plate that doesn't belong there.
+            My best friend's mom kept it going — she'd encourage me to cook whenever I came over
+            to hang out. When I was twelve, she handed me a cookbook and a whole rack of lamb. I
+            frenched it and cooked it perfectly.
+          </p>
+          <p>
+            Cooking has been a major part of my identity ever since, and I couldn't have done it
+            without the encouragement of family and friends. Years later I paid for college
+            working as a chef, and the discipline transferred: build systems that don't depend on
+            heroics. Document everything. Remove what doesn't earn its place. Clean flavors,
+            honest ingredients, nothing on the plate that doesn't belong there.
           </p>
         </div>
         <div className="grid-3">

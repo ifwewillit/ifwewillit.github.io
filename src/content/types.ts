@@ -20,6 +20,14 @@ export interface Essay {
   blurb: string;
 }
 
+export interface ExternalArticle {
+  title: string;
+  date: string;
+  readTime: string;
+  url: string;
+  blurb: string;
+}
+
 export type BuildTheme = "ai" | "data" | "platform" | "web";
 
 export interface BuildProject {

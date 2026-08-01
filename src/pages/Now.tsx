@@ -36,7 +36,7 @@ export function Now() {
           <h2>Cooking</h2>
           <p>
             Summer means fire: live-coal vegetables, smoked chiles, and the eternal refinement of
-            mole. The Sonoran pantry never stops teaching.
+            mole.
           </p>
 
           <h2>Reading</h2>
