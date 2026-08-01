@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /nina/
+
+Sitemap: https://ifwewillit.github.io/sitemap.xml

@@ -1,0 +1,124 @@
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Three layers: primitives feed semantic tokens; components consume semantic
+   tokens only. Dark mode: [data-theme="dark"] wins; otherwise OS preference.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* -- primitives: warm neutral ramp + brand accents -- */
+  --stone-50: #faf9f7;
+  --stone-100: #f3f1ed;
+  --stone-200: #e7e2db;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-900: #1c1917;
+  --brown-600: #8b4513;
+  --brown-700: #6d3410;
+  --brown-100: #f3e9df;
+  --sand-400: #d4a574;
+
+  /* -- semantic: color (light) -- */
+  color-scheme: light;
+  --bg: var(--stone-50);
+  --surface: #ffffff;
+  --surface-raised: #fffdfa;
+  --text: var(--stone-900);
+  --text-muted: var(--stone-600);
+  --text-faint: var(--stone-500);
+  --accent: var(--brown-600);
+  --accent-strong: var(--brown-700);
+  --accent-soft: var(--brown-100);
+  --accent-contrast: #ffffff;
+  --border: var(--stone-200);
+  --border-strong: #d6cfc5;
+  --focus-ring: #b06a2e;
+  --nav-bg: rgb(250 249 247 / 0.88);
+  --shadow-sm: 0 1px 2px rgb(28 25 23 / 0.06);
+  --shadow-md: 0 2px 8px rgb(28 25 23 / 0.08), 0 8px 24px rgb(28 25 23 / 0.06);
+  --shadow-lg: 0 4px 12px rgb(28 25 23 / 0.08), 0 16px 40px rgb(28 25 23 / 0.1);
+
+  /* -- semantic: typography -- */
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-body: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: clamp(1.15rem, 1rem + 0.6vw, 1.35rem);
+  --text-xl: clamp(1.4rem, 1.2rem + 1vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.25rem);
+  --text-3xl: clamp(2.25rem, 1.7rem + 2.6vw, 3.5rem);
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-body: 1.7;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  /* -- semantic: space, radius, size -- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+  --container: 1100px;
+  --container-narrow: 760px;
+
+  /* -- motion -- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 600ms;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16130f;
+  --surface: #1e1a15;
+  --surface-raised: #262119;
+  --text: #ece6dd;
+  --text-muted: #a89f93;
+  --text-faint: #857c70;
+  --accent: var(--sand-400);
+  --accent-strong: #e3bd91;
+  --accent-soft: #2e2620;
+  --accent-contrast: #1c1410;
+  --border: #35302a;
+  --border-strong: #4a443c;
+  --focus-ring: var(--sand-400);
+  --nav-bg: rgb(22 19 15 / 0.88);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 2px 8px rgb(0 0 0 / 0.5), 0 8px 24px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 4px 12px rgb(0 0 0 / 0.5), 0 16px 40px rgb(0 0 0 / 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --bg: #16130f;
+    --surface: #1e1a15;
+    --surface-raised: #262119;
+    --text: #ece6dd;
+    --text-muted: #a89f93;
+    --text-faint: #857c70;
+    --accent: var(--sand-400);
+    --accent-strong: #e3bd91;
+    --accent-soft: #2e2620;
+    --accent-contrast: #1c1410;
+    --border: #35302a;
+    --border-strong: #4a443c;
+    --focus-ring: var(--sand-400);
+    --nav-bg: rgb(22 19 15 / 0.88);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 2px 8px rgb(0 0 0 / 0.5), 0 8px 24px rgb(0 0 0 / 0.35);
+    --shadow-lg: 0 4px 12px rgb(0 0 0 / 0.5), 0 16px 40px rgb(0 0 0 / 0.45);
+  }
+}
