@@ -28,7 +28,7 @@ export interface ExternalArticle {
   blurb: string;
 }
 
-export type BuildTheme = "ai" | "data" | "platform" | "web";
+export type BuildTheme = "ai" | "data" | "platform" | "mobile" | "web";
 
 export interface BuildProject {
   id: string;

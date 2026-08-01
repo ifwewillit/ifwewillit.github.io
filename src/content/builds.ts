@@ -6,6 +6,16 @@ import type { BuildProject } from "./types";
  * rubrics, data, or internal URLs.
  */
 export const builds: BuildProject[] = [
+  // -- Mobile --
+  {
+    id: "protocol",
+    theme: "mobile",
+    title: "Protocol",
+    oneLiner: "An evidence-based fitness & nutrition app for iPhone and Apple Watch.",
+    description:
+      "~40,000 lines of Swift. An AI coach built on the Claude API uses agentic tool calls to log food and weight straight from conversation; meals can also be logged from a photo or searched across USDA and Open Food Facts. Adaptive training programs with strength standards, recovery scoring, HealthKit throughout, a full Watch companion with live rep counting, home-screen widgets, and a rest-timer Live Activity. Every science insight in the app cites its primary study.",
+    stack: ["Swift", "SwiftUI", "SwiftData", "HealthKit", "Claude API", "watchOS"],
+  },
   // -- AI & LLM systems --
   {
     id: "request-radar",

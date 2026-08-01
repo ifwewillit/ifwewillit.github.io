@@ -22,8 +22,9 @@ export function Now() {
             them is on the <a href="/builds/">Builds page</a>.
           </p>
           <p>
-            Also this site: a from-scratch design system and custom static-site generator. React
-            hydrating over prerendered HTML, dark mode, no framework.
+            On the personal side: <strong>Protocol</strong>, an evidence-based fitness and
+            nutrition app for iPhone and Apple Watch with an AI coach built on the Claude API —
+            and this site, a from-scratch design system and custom static-site generator.
           </p>
 
           <h2>Learning</h2>

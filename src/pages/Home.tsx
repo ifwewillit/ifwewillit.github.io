@@ -173,7 +173,7 @@ export function Home() {
       <Section
         eyebrow="Builds"
         title="Production systems, in the open"
-        intro="Fifteen systems across AI/LLM pipelines, data infrastructure, internal platforms, and the web — with the architecture patterns behind each one."
+        intro="Sixteen systems across AI/LLM pipelines, data infrastructure, internal platforms, mobile, and the web — from an AI-coached iOS app to edge-deployed data workers."
       >
         <div className="section-cta" style={{ marginTop: 0 }}>
           <Button href="/builds/">Explore the builds →</Button>

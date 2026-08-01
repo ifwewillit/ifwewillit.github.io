@@ -7,6 +7,7 @@ const THEMES: { key: BuildTheme | "all"; label: string }[] = [
   { key: "ai", label: "AI & LLM systems" },
   { key: "data", label: "Data pipelines" },
   { key: "platform", label: "Platforms" },
+  { key: "mobile", label: "Mobile" },
   { key: "web", label: "Web" },
 ];
 
@@ -14,6 +15,7 @@ const THEME_LABEL: Record<BuildTheme, string> = {
   ai: "AI / LLM",
   data: "Data",
   platform: "Platform",
+  mobile: "iOS",
   web: "Web",
 };
 
