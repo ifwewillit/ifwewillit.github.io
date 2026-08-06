@@ -127,6 +127,27 @@
   .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(8px);background:var(--ink);color:#fff;border-radius:999px;padding:11px 22px;font-size:14px;font-weight:600;opacity:0;transition:all .22s ease;z-index:100;pointer-events:none;white-space:nowrap}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+  /* =============== PITCH SECTION =============== */
+  .pitch{margin:56px 0 70px;border-top:1px solid var(--line);padding-top:44px}
+  .pitch h2.big{font-size:clamp(26px,4.5vw,40px);margin:0 0 12px;font-weight:750;text-wrap:balance}
+  .pitch h2.big .hl{color:var(--pink)}
+  .pitch .plede{max-width:62ch;color:var(--muted);font-size:15.5px;margin:0 0 24px}
+  .pitch .plede strong{color:var(--ink)}
+  .own{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:26px}
+  .own > div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .own b{display:block;font-size:14.5px;margin-bottom:6px}
+  .own p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.55}
+  .receipts{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:26px}
+  .receipts .rlabel{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+  .tile .num{font-size:clamp(28px,4vw,40px);font-weight:750;font-variant-numeric:tabular-nums;line-height:1;color:var(--ink)}
+  .tile .lab{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .receipts .fine{font-size:12px;color:var(--muted);margin:16px 0 0;border-top:1px dashed var(--line);padding-top:12px}
+  .deal{border:2px solid var(--ink);border-radius:16px;padding:22px 26px;background:var(--panel)}
+  .deal h3{margin:0 0 10px;font-size:18px}
+  .deal ul{margin:0 0 18px;padding-left:20px;font-size:14.5px}
+  .deal li{margin-bottom:6px}
+
   /* =============== D1 CAPTION CARD =============== */
   .d1-stage{background:#3E3E3C url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="8" height="8" fill="%233e3e3c"/><circle cx="1" cy="1" r=".7" fill="%23494947"/></svg>')}
   .d1-capbox{background:#fff;color:#111;padding:16px 26px;font-family:'Courier Prime',"Courier New",monospace;font-weight:700;font-size:clamp(22px,4vw,38px);line-height:1.3;box-shadow:0 4px 0 rgba(0,0,0,.35);max-width:82%;text-align:center}
@@ -715,6 +736,11 @@ function App(){
     showToast('copied — send it to Will 💌');
   };
 
+  const copyDeal = () => {
+    navigator.clipboard && navigator.clipboard.writeText("ok COO, let's do the 90 days 💅");
+    showToast('copied — DM it to Will 💌');
+  };
+
   return (
     <div>
       <header className="masthead">
@@ -791,6 +817,46 @@ function App(){
           </div>
           <button className="copybtn" onClick={copyPicks}>copy my picks to send to Will 💌</button>
         </div>
+
+        <section className="pitch">
+          <p className="eyebrow">one more thing · that DM sidebar, but official</p>
+          <h2 className="big">fire your manager. hire a <span className="hl">COO</span>. 💅</h2>
+          <p className="plede">
+            You said it yourself — you're starting your own team. So here's the org chart:
+            <strong> you're the CEO and the talent.</strong> I handle the yucky business stuff,
+            and I hustle like nobody you've ever met. Here's what that actually looks like:
+          </p>
+
+          <div className="own">
+            <div><b>💖 Follower engagement engine</b><p>Your waitlist converted at 60% because your people LOVE you. I build the machine that keeps them close — so every launch hits like the first one.</p></div>
+            <div><b>📣 Brand deals</b><p>I find brands that actually fit you, send the pitches, set your rates, and say no to the trash offers. You never write an awkward money email again.</p></div>
+            <div><b>🤝 Contracts &amp; negotiation</b><p>I read fine print and negotiate deals every single week at my day job. Nobody lowballs you on my watch.</p></div>
+            <div><b>🏢 The boring-but-important setup</b><p>The LLC, the business bank account, the CPA, the taxes — the exact list from our DMs, done right. (Your dad and I are going to get along great.)</p></div>
+            <div><b>🛠 The tech</b><p>This page, the story cards, the plan to turn your guide into a members-only site people can't just forward around — all me, in days. Imagine 90 of them.</p></div>
+          </div>
+
+          <div className="receipts">
+            <p className="rlabel">Receipts — my last 90 days at my day job, real numbers</p>
+            <div className="tiles">
+              <div className="tile"><div className="num">226</div><div className="lab">projects &amp; tasks kicked off</div></div>
+              <div className="tile"><div className="num">119</div><div className="lab">finished, done-done</div></div>
+              <div className="tile"><div className="num">13</div><div className="lab">projects running at once</div></div>
+              <div className="tile"><div className="num">3</div><div className="lab">departments I run</div></div>
+            </div>
+            <p className="fine">Pulled straight from the task tracker at the company I co-founded 8 years ago. I can't show you what's inside (confidential work stuff) — but the pace is real, and it's what I'd point at you.</p>
+          </div>
+
+          <div className="deal">
+            <h3>The deal: 90-day trial 🤝</h3>
+            <ul>
+              <li>Week one, we write down the goals together — so "did Will deliver?" is never a vibe, it's a checklist.</li>
+              <li>I run the engagement engine, brand deals, contracts, and business setup. You just make content.</li>
+              <li>Background check included, lol.</li>
+              <li>If I don't deliver? I go back to being follower #178,001 and we stay friends. That part was always the point.</li>
+            </ul>
+            <button className="copybtn" onClick={copyDeal}>ok COO, let's do the 90 days 💅</button>
+          </div>
+        </section>
       </main>
 
       <div className={`toast ${toast ? 'show' : ''}`} role="status">{toast}</div>
