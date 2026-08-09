@@ -133,6 +133,15 @@
   .pitch h2.big .hl{color:var(--pink)}
   .pitch .plede{max-width:62ch;color:var(--muted);font-size:15.5px;margin:0 0 24px}
   .pitch .plede strong{color:var(--ink)}
+  .ptabs{display:flex;gap:8px;margin:0 0 26px;flex-wrap:wrap}
+  .ptabs button{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:10px 18px;font-size:13.5px;font-weight:650;color:var(--muted);transition:all .18s ease}
+  .ptabs button.on{color:#fff;background:var(--ink);border-color:var(--ink);transform:translateY(-1px);box-shadow:0 4px 12px -6px rgba(0,0,0,.45)}
+  @media(max-width:640px){.ptabs button{font-size:12.5px;padding:9px 14px}}
+  .ppanel{animation:ppop .28s ease}
+  @keyframes ppop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.ppanel{animation:none}}
+  .ppanel .ph2{font-size:clamp(20px,3.2vw,26px);margin:0 0 10px;font-weight:750;text-wrap:balance}
+  .ppanel .ph2 .hl{color:var(--pink)}
   .own{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:26px}
   .own > div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
   .own b{display:block;font-size:14.5px;margin-bottom:6px}
@@ -766,8 +775,14 @@ function Machine({ toast }){
   const [di, setDi] = useState(0);
   const [cash, setCash] = useState(0);
   const [bursts, setBursts] = useState([]);
+  const trackRef = useRef(null);
   const deal = M_DEALS[di % M_DEALS.length];
   const stage = M_STAGES[si];
+
+  useEffect(() => {
+    const el = trackRef.current && trackRef.current.querySelector('.m-stage.now');
+    if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }, [si]);
 
   const advance = () => {
     if (si < M_STAGES.length - 1) { setSi(si + 1); return; }
@@ -786,7 +801,7 @@ function Machine({ toast }){
         <div className="m-cash">${cash.toLocaleString()}<small>earned in this little demo</small></div>
       </div>
 
-      <div className="m-track">
+      <div className="m-track" ref={trackRef}>
         {M_STAGES.map((s, i) => (
           <div key={s.name} className={`m-stage ${i < si ? 'done' : ''} ${i === si ? 'now' : ''}`}>
             <div className="dot2">{s.emoji}</div>
@@ -818,6 +833,7 @@ function App(){
   const [idx, setIdx] = useState(0);
   const [dirn, setDirn] = useState('fwd');
   const [toast, setToast] = useState('');
+  const [ptab, setPtab] = useState(0);
   const [loves, setLoves] = useState(() => {
     try { return JSON.parse(localStorage.getItem('nina-picks') || '[]'); } catch(e){ return []; }
   });
@@ -963,9 +979,17 @@ function App(){
           <p className="plede">
             You said it yourself: you're starting your own team. So here's the org chart:
             <strong> you're the CEO and the talent.</strong> I handle the yucky business stuff,
-            and I hustle like nobody you've ever met. Here's what that actually looks like:
+            and I hustle like nobody you've ever met. The whole pitch is three chapters,
+            and they all live right here. Tap through, zero endless scrolling:
           </p>
 
+          <div className="ptabs" role="tablist" aria-label="The COO pitch">
+            <button className={ptab === 0 ? 'on' : ''} role="tab" aria-selected={ptab === 0} onClick={() => setPtab(0)}>💅 the job</button>
+            <button className={ptab === 1 ? 'on' : ''} role="tab" aria-selected={ptab === 1} onClick={() => setPtab(1)}>📣 the hit list</button>
+            <button className={ptab === 2 ? 'on' : ''} role="tab" aria-selected={ptab === 2} onClick={() => setPtab(2)}>💸 the money machine</button>
+          </div>
+
+          {ptab === 0 && <div className="ppanel" key="job">
           <div className="own">
             <div><b>💖 Follower engagement engine</b><p>Your waitlist converted at 60% because your people LOVE you. I build the machine that keeps them close, so every launch hits like the first one.</p></div>
             <div><b>📣 Brand deals</b><p>I find brands that actually fit you, send the pitches, set your rates, and say no to the trash offers. You never write an awkward money email again.</p></div>
@@ -995,11 +1019,10 @@ function App(){
             </ul>
             <button className="copybtn" onClick={copyDeal}>ok COO, let's do the 90 days 💅</button>
           </div>
-        </section>
+          </div>}
 
-        <section className="pitch">
-          <p className="eyebrow">part two of the pitch · the hit list</p>
-          <h2 className="big">brands I want to get you <span className="hl">paid</span> by 📣</h2>
+          {ptab === 1 && <div className="ppanel" key="brands">
+          <h2 className="ph2">brands I want to get you <span className="hl">paid</span> by 📣</h2>
           <p className="plede">
             One rule keeps this list authentically you: <strong>if you wouldn't recommend it to a friend
             for free, we don't take their money.</strong> Everything below is stuff you already talk about,
@@ -1027,11 +1050,10 @@ function App(){
           ))}
 
           <button className="copybtn" onClick={copyBrands}>copy my yes-list for Will 📣</button>
-        </section>
+          </div>}
 
-        <section className="pitch">
-          <p className="eyebrow">part three · the machine behind the money</p>
-          <h2 className="big">how a brand goes from list to <span className="hl">paycheck</span> 💸</h2>
+          {ptab === 2 && <div className="ppanel" key="machine">
+          <h2 className="ph2">how a brand goes from list to <span className="hl">paycheck</span> 💸</h2>
           <p className="plede">
             This is the system I already built for you (for real, it exists, it's running right now).
             Every brand deal travels through the same six steps, and the boring steps happen
@@ -1040,6 +1062,7 @@ function App(){
           </p>
 
           <Machine toast={showToast} />
+          </div>}
         </section>
       </main>
 
