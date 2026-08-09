@@ -162,6 +162,28 @@
   .bcard.on .btag{background:#FFE4EF;color:#B0246A}
   .bcard .bwhy{margin:0;font-size:13px;color:var(--muted);line-height:1.55}
 
+  /* =============== THE MONEY MACHINE =============== */
+  .machine{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-top:6px}
+  .m-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .m-top h3{margin:0;font-size:18px}
+  .m-cash{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:750;font-size:clamp(20px,3vw,28px);color:var(--ink)}
+  .m-cash small{display:block;font-size:11px;font-weight:500;color:var(--muted);text-align:right;letter-spacing:.08em;text-transform:uppercase}
+  .m-track{display:flex;gap:6px;overflow-x:auto;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
+  .m-stage{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:86px;position:relative}
+  .m-stage .dot2{width:34px;height:34px;border-radius:50%;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:15px;border:2px solid var(--line);transition:all .25s ease}
+  .m-stage.done .dot2{background:#FFE4EF;border-color:var(--pink)}
+  .m-stage.now .dot2{background:var(--pink);border-color:var(--pink);transform:scale(1.18);box-shadow:0 6px 16px -8px rgba(255,92,138,.8)}
+  .m-stage .slab{font-size:11px;font-weight:650;color:var(--muted);white-space:nowrap}
+  .m-stage.now .slab{color:var(--ink)}
+  .m-stage:not(:last-child)::after{content:"";position:absolute;top:17px;left:calc(50% + 22px);width:calc(100% - 40px);height:2px;background:var(--line)}
+  .m-stage.done:not(:last-child)::after{background:var(--pink)}
+  .m-card{border:2px solid var(--ink);border-radius:14px;padding:16px 18px;background:var(--bg);margin-bottom:14px}
+  .m-card .m-brand{font-weight:750;font-size:15.5px;margin-bottom:4px}
+  .m-card .m-what{margin:0;font-size:13.5px;color:var(--muted);line-height:1.55;min-height:3.1em}
+  .m-card .m-auto{display:inline-block;margin-top:9px;background:#FFF3D6;color:#8a5a00;border-radius:999px;padding:4px 12px;font-size:11.5px;font-weight:650}
+  .m-go{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .m-fine{font-size:11.5px;color:var(--muted);margin:12px 0 0}
+
   /* =============== D1 CAPTION CARD =============== */
   .d1-stage{background:#3E3E3C url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="8" height="8" fill="%233e3e3c"/><circle cx="1" cy="1" r=".7" fill="%23494947"/></svg>')}
   .d1-capbox{background:#fff;color:#111;padding:16px 26px;font-family:'Courier Prime',"Courier New",monospace;font-weight:700;font-size:clamp(22px,4vw,38px);line-height:1.3;box-shadow:0 4px 0 rgba(0,0,0,.35);max-width:82%;text-align:center}
@@ -722,6 +744,75 @@ const BRANDS = [
   ]},
 ];
 
+/* ---------------- the money machine ---------------- */
+const M_STAGES = [
+  { name: 'Target',       emoji: '🎯', what: 'I research the brand and write the pitch angle. You do nothing. This part is already done for all 11 brands.' },
+  { name: 'Pitched',      emoji: '💌', what: 'I send the pitch from the business inbox. You keep filming.', auto: '⏰ if they go quiet for 4 days, the system automatically reminds me to nudge them. No pitch ever gets forgotten.' },
+  { name: 'Talking',      emoji: '💬', what: 'They replied!! I handle the back-and-forth emails and only ping you for the fun creative decisions.' },
+  { name: 'Contract',     emoji: '🤝', what: 'I negotiate the rate, read every line of fine print, and say no to trash terms. Nobody lowballs you on my watch.' },
+  { name: 'Content Live', emoji: '📱', what: 'You post. That part was always yours. I collect the links and screenshots the brand needs.' },
+  { name: 'Paid 🎉',      emoji: '💸', what: 'Invoice sent, money lands, and the machine rolls to the next brand. Same steps, every time, nothing slips.' },
+];
+const M_DEALS = [
+  { brand: 'Bokksu',   pay: 1200 },
+  { brand: 'FIGS',     pay: 2500 },
+  { brand: 'Klook',    pay: 900 },
+  { brand: 'HOKA',     pay: 2000 },
+  { brand: 'Uniqlo',   pay: 3500 },
+];
+
+function Machine({ toast }){
+  const [si, setSi] = useState(0);
+  const [di, setDi] = useState(0);
+  const [cash, setCash] = useState(0);
+  const [bursts, setBursts] = useState([]);
+  const deal = M_DEALS[di % M_DEALS.length];
+  const stage = M_STAGES[si];
+
+  const advance = () => {
+    if (si < M_STAGES.length - 1) { setSi(si + 1); return; }
+    setCash(c => c + deal.pay);
+    setBursts(['💸','🎉','💖','✨','💰','🎊'].map((e,i) => ({ e, id: Date.now()+i, dx: (Math.random()*160-80)+'px', dy: (-40-Math.random()*80)+'px' })));
+    setTimeout(() => setBursts([]), 900);
+    toast(`${deal.brand} paid!! next brand loaded 💌`);
+    setDi(d => d + 1);
+    setSi(0);
+  };
+
+  return (
+    <div className="machine">
+      <div className="m-top">
+        <h3>watch a deal travel 👀</h3>
+        <div className="m-cash">${cash.toLocaleString()}<small>earned in this little demo</small></div>
+      </div>
+
+      <div className="m-track">
+        {M_STAGES.map((s, i) => (
+          <div key={s.name} className={`m-stage ${i < si ? 'done' : ''} ${i === si ? 'now' : ''}`}>
+            <div className="dot2">{s.emoji}</div>
+            <div className="slab">{s.name}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="m-card">
+        <div className="m-brand">{deal.brand} × Nina · {stage.name}</div>
+        <p className="m-what">{stage.what}</p>
+        {stage.auto && <span className="m-auto">{stage.auto}</span>}
+      </div>
+
+      <div className="m-go" style={{position:'relative'}}>
+        <button className="copybtn" onClick={advance}>
+          {si < M_STAGES.length - 1 ? 'move the deal forward 👉' : `collect $${deal.pay.toLocaleString()} 💸`}
+        </button>
+        {bursts.map(b => <span key={b.id} className="burst" style={{'--dx': b.dx, '--dy': b.dy}}>{b.e}</span>)}
+      </div>
+
+      <p className="m-fine">Example rates for the demo. Real rates get negotiated per deal, and negotiating is my whole job. The real version of this board is already built and running: all 11 brands loaded with their pitch angles, follow-up timers armed, every brand email tracked in one place.</p>
+    </div>
+  );
+}
+
 /* ---------------- app ---------------- */
 function App(){
   const [idx, setIdx] = useState(0);
@@ -936,6 +1027,19 @@ function App(){
           ))}
 
           <button className="copybtn" onClick={copyBrands}>copy my yes-list for Will 📣</button>
+        </section>
+
+        <section className="pitch">
+          <p className="eyebrow">part three · the machine behind the money</p>
+          <h2 className="big">how a brand goes from list to <span className="hl">paycheck</span> 💸</h2>
+          <p className="plede">
+            This is the system I already built for you (for real, it exists, it's running right now).
+            Every brand deal travels through the same six steps, and the boring steps happen
+            <strong> automatically</strong> so nothing gets forgotten and nobody gets to ghost us quietly.
+            Tap the button and walk one through yourself:
+          </p>
+
+          <Machine toast={showToast} />
         </section>
       </main>
 
