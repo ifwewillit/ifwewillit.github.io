@@ -177,6 +177,7 @@
   .m-top h3{margin:0;font-size:18px}
   .m-cash{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:750;font-size:clamp(20px,3vw,28px);color:var(--ink)}
   .m-cash small{display:block;font-size:11px;font-weight:500;color:var(--muted);text-align:right;letter-spacing:.08em;text-transform:uppercase}
+  .m-cash + .m-cash{margin-left:0}
   .m-track{display:flex;gap:6px;overflow-x:auto;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
   .m-stage{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:86px;position:relative}
   .m-stage .dot2{width:34px;height:34px;border-radius:50%;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:15px;border:2px solid var(--line);transition:all .25s ease}
@@ -828,6 +829,81 @@ function Machine({ toast }){
   );
 }
 
+/* ---------------- the fan engine ---------------- */
+const F_STAGES = [
+  { name: 'Spotted',      emoji: '👀', what: "She's commented on three reels this week and tags her friends every time. The system flags her so she never gets lost in a pile of 178,000." },
+  { name: 'Talking',      emoji: '💬', what: "She gets a real reply, not a heart emoji. The system remembers every conversation, so next time she pops up we know exactly who she is.", auto: '⏰ every conversation gets logged automatically. No superfan ever gets the awkward "who are you again?" treatment.' },
+  { name: 'Superfan',     emoji: '💖', what: "She shows up on every single post. People like her are why your waitlist converted at 60%. Time to give her something the algorithm can't hide.", auto: '⏰ the system pings me to move every superfan toward the email list. If she sits here two weeks, it pings me again.' },
+  { name: 'Email List',   emoji: '📧', what: "She trades her email for a free chapter of the guide. Huge moment: no algorithm stands between you and her anymore. She's not Instagram's, she's yours." },
+  { name: 'Guide Buyer',  emoji: '🛍️', what: "Launch email goes out and she buys in one click, because she already loves you. Your waitlist proved this works once. The engine makes it happen on repeat." },
+  { name: 'Advocate',     emoji: '📣', what: "She posts her Kyoto trip, tags your guide, and her friends ask where she got it. The top of the pipeline refills itself. That's the engine part." },
+];
+const F_FANS = ['@kenzie.flies', '@nurse.jess.rn', '@tokyo.daydream', '@matt.backpacks', '@emily.eats.jpn'];
+
+function FanEngine({ toast }){
+  const [si, setSi] = useState(0);
+  const [fi, setFi] = useState(0);
+  const [list, setList] = useState(0);
+  const [sales, setSales] = useState(0);
+  const [bursts, setBursts] = useState([]);
+  const trackRef = useRef(null);
+  const fan = F_FANS[fi % F_FANS.length];
+  const stage = F_STAGES[si];
+
+  useEffect(() => {
+    const el = trackRef.current && trackRef.current.querySelector('.m-stage.now');
+    if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }, [si]);
+
+  const advance = () => {
+    if (si === 2) setList(l => l + 1);
+    if (si === 3) { setSales(s => s + 45); toast(`${fan} bought the guide 💸 +$45`); }
+    if (si < F_STAGES.length - 1) { setSi(si + 1); return; }
+    setBursts(['💖','📣','✨','💌','🫶','🎊'].map((e,i) => ({ e, id: Date.now()+i, dx: (Math.random()*160-80)+'px', dy: (-40-Math.random()*80)+'px' })));
+    setTimeout(() => setBursts([]), 900);
+    toast(`${fan} brought 3 friends into the pipeline 💖`);
+    setFi(f => f + 1);
+    setSi(0);
+  };
+
+  const label = si === F_STAGES.length - 1 ? 'she tells her friends 📣'
+    : si === 2 ? 'get her off the algorithm 📧'
+    : si === 3 ? 'launch day: send the email 💌'
+    : 'move her closer 👉';
+
+  return (
+    <div className="machine">
+      <div className="m-top">
+        <h3>watch a fan become yours 👀</h3>
+        <div className="m-cash">{list}<small>emails you own</small></div>
+        <div className="m-cash">${sales.toLocaleString()}<small>guide money</small></div>
+      </div>
+
+      <div className="m-track" ref={trackRef}>
+        {F_STAGES.map((s, i) => (
+          <div key={s.name} className={`m-stage ${i < si ? 'done' : ''} ${i === si ? 'now' : ''}`}>
+            <div className="dot2">{s.emoji}</div>
+            <div className="slab">{s.name}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="m-card">
+        <div className="m-brand">{fan} · {stage.name}</div>
+        <p className="m-what">{stage.what}</p>
+        {stage.auto && <span className="m-auto">{stage.auto}</span>}
+      </div>
+
+      <div className="m-go" style={{position:'relative'}}>
+        <button className="copybtn" onClick={advance}>{label}</button>
+        {bursts.map(b => <span key={b.id} className="burst" style={{'--dx': b.dx, '--dy': b.dy}}>{b.e}</span>)}
+      </div>
+
+      <p className="m-fine">This board is real too. It's the second pipeline in the same system, sitting right next to the brand deals. The math that matters: 178,000 followers are rented from Instagram, and the algorithm sets the rent. An email list is owned. If just 1,000 of your realest people end up buying the guide, that's $45,000 no algorithm update can touch. Brand deals pay the bills. This part builds the empire.</p>
+    </div>
+  );
+}
+
 /* ---------------- app ---------------- */
 function App(){
   const [idx, setIdx] = useState(0);
@@ -987,6 +1063,7 @@ function App(){
             <button className={ptab === 0 ? 'on' : ''} role="tab" aria-selected={ptab === 0} onClick={() => setPtab(0)}>💅 the job</button>
             <button className={ptab === 1 ? 'on' : ''} role="tab" aria-selected={ptab === 1} onClick={() => setPtab(1)}>📣 the hit list</button>
             <button className={ptab === 2 ? 'on' : ''} role="tab" aria-selected={ptab === 2} onClick={() => setPtab(2)}>💸 the money machine</button>
+            <button className={ptab === 3 ? 'on' : ''} role="tab" aria-selected={ptab === 3} onClick={() => setPtab(3)}>💖 the fan engine</button>
           </div>
 
           {ptab === 0 && <div className="ppanel" key="job">
@@ -1062,6 +1139,19 @@ function App(){
           </p>
 
           <Machine toast={showToast} />
+          </div>}
+
+          {ptab === 3 && <div className="ppanel" key="fans">
+          <h2 className="ph2">how a follower becomes <span className="hl">yours</span> 💖</h2>
+          <p className="plede">
+            Brand money is great, but it's rent money: it stops when the campaign stops.
+            Your people are the asset. Right now all 178K of them technically live on
+            Instagram's servers, and the algorithm decides if they even see you.
+            This engine moves your realest fans somewhere <strong>you own</strong>,
+            one stage at a time. Walk one fan through it:
+          </p>
+
+          <FanEngine toast={showToast} />
           </div>}
         </section>
       </main>
