@@ -754,11 +754,11 @@ const M_STAGES = [
   { name: 'Paid 🎉',      emoji: '💸', what: 'Invoice sent, money lands, and the machine rolls to the next brand. Same steps, every time, nothing slips.' },
 ];
 const M_DEALS = [
-  { brand: 'Bokksu',   pay: 1200 },
-  { brand: 'FIGS',     pay: 2500 },
-  { brand: 'Klook',    pay: 900 },
-  { brand: 'HOKA',     pay: 2000 },
-  { brand: 'Uniqlo',   pay: 3500 },
+  { brand: 'Bokksu',   pay: 4800 },
+  { brand: 'FIGS',     pay: 9500 },
+  { brand: 'Klook',    pay: 5200 },
+  { brand: 'HOKA',     pay: 8500 },
+  { brand: 'Uniqlo',   pay: 15000 },
 ];
 
 function Machine({ toast }){
@@ -808,7 +808,7 @@ function Machine({ toast }){
         {bursts.map(b => <span key={b.id} className="burst" style={{'--dx': b.dx, '--dy': b.dy}}>{b.e}</span>)}
       </div>
 
-      <p className="m-fine">Example rates for the demo. Real rates get negotiated per deal, and negotiating is my whole job. The real version of this board is already built and running: all 11 brands loaded with their pitch angles, follow-up timers armed, every brand email tracked in one place.</p>
+      <p className="m-fine">Example rates, but not crazy ones. Creators your size close numbers like these when somebody negotiates properly, and negotiating is my whole job. One lap through five brands is a year of ER shifts. The real version of this board is already built and running: all 11 brands loaded with their pitch angles, follow-up timers armed, every brand email tracked in one place.</p>
     </div>
   );
 }
